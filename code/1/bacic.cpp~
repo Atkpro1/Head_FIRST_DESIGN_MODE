@@ -1,0 +1,16 @@
+class people{
+public:
+  string getName();
+  void eat();//³Ô·¹
+  void sleep();//Ë¯¾õ
+  void fight();//´ò¶·¶·
+  people(string name);
+private:
+  string Name;
+}
+people::getName(){return Name;}
+
+people::eat(){cout<<Name<<":°³¾Í³Ô¸ö·¹¡£"<<endl;}
+
+people::sleep(){cout<<Name<<":°³¾ÍË¯¸ö¾õ"<<endl;}
+
