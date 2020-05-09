@@ -1,9 +1,9 @@
 class people{
 public:
   string getName();
-  void eat();//吃饭
-  void sleep();//睡觉
-  void work();//打斗斗
+  virtual void eat();//吃饭
+  virtual void sleep();//睡觉
+  virtual void work();//工作
   people(string name);
 private:
   string Name;

@@ -1,45 +1,67 @@
-大家好,我会来啦!
+\documentclass{ctexart}
+\def\enter{{\hfill\break}}
 
-好了,现谈这正事,我们这次要阅读《HEAD FIRST设计模式》，又称《面向对象程序设计套路入门》
-
-[对,套路,深深的套路]
-
-不过这些套路一向很有用呢.
-
-好了,这不是篇0吗,我们就别写引言了,我们来写点其他的事
-
-这里的文章都发表在GITHUB,目录结构如下有4个文件夹
-
-\\
-|主目录
-|-------effect
-|       |一些用TEX写的效果,增加滑稽与可读性
-|       |空的,别想啦
-|
-|-------document
-|       |直接用TEX写的原文件,可供阅读
-|       |0.tex 本文件
-|
-|-------code
-|       |用C++编写的代码,把中文换掉就可编译
-|       |-------X
-|       |       |第X章的代码
-|       |       |basic 第一版代码
-|       |       |Change\_*** 用***方式修改后
-|       |       |Pattern\_Used 使用了设计模式后
-|       |       |Pattern\_Change\_*** 使用了***与设计模式修改后(有时不存在)
-|       |       |Pattern\_Result 结果方案
-|       |CPP.cpp
-|
-|-------dvi
-|       |从document用tex程序编译的结果
-|       |可以用XDVI(Linux),YAP(WINDOWS)预览,dvips,dvipdf转换为PostScript或PDF
-|       |X.dvi X.tex的结果
-
-什么,无法预览DVI?我不想提供PDF(懒),直接看X.tex也没什么问题.
-
-哦,对了,趁机看看C++的OOP功能吧,在code/CPP.cpp,大家可以自己看注释
-
-(其实C++OOP坑人之处很多,例如构造函数不能调用抽象函数,不会自动继承构造函数......)
-
-好了,大家可以去看第一章了,See You.
+\begin{document}
+\enter
+大家好啊.\enter
+今天我们将遇到我们的第一个套路--策略模式.\enter
+\enter
+[产品乱入]:小许啊,我们这里有个需求文档,看看吧.
+\enter
+XX市管理局:\enter
+贵公司好,我市希望请贵公司为我市设计一个管理系统,统计市民的生活情况.\enter
+现在先请贵公司设计一个类,模拟一个市民.此市民可以吃饭,睡觉,工作.\enter
+注:不同市民的生活方式可以不一样,我们会提供不同市民的动作.\enter
+注2:具体行为的变化可能较快,希望贵公司谅解.\enter
+注3:我们会尽可能快的发来下一篇需求文档.\enter
+\enter
+谢谢\enter
+\enter
+哎呀,今天晚上我吃臭鸡蛋和瓜皮吧(编的真烂)\enter
+\enter
+算了,先分析需求.\enter
+\enter
+需求不就是让我们写一个市民类吗,里面有eat,sleep,work3个方法,老简单了.\enter
+小许很快写出了第一版代码basic.cpp\enter
+\enter
+这时,小许突然收到了一封邮件.\enter
+\enter
+PM:客户刚刚说不同市民的行为可能不一样.\enter
+\enter
+小许:切,我把函数改称支持多态的不就好了(PS.C++函数默认带final)\enter
+很快,小许就写好了第二版的代码(Change\_Virtual.cpp),交给了BILL审批\enter
+BILL:嘿嘿嘿,你和张大胖犯了同一个错误.去问他吧.\enter
+\enter
+小许:请问张大胖在吗?\enter
+张大胖:在.\enter
+小许:BILL说我这版代码不合格,为什么?\enter
+张大胖满脸自豪(BILL优秀小学教师实锤):你知道设计模式吗?\enter
+小许:布吉岛\enter
+张大胖:就是一群前人总结的经验而已\enter
+小许:那我去背不就是啦?\enter
+张大胖:NO,NO,NO,你要理解其精华.\enter
+小许:那其精华是什么呢???\enter
+张大胖:你最讨厌什么?\enter
+小许:RubbishPM改需求!\enter
+张大胖:那你就要让改需求时更方便.\enter
+小许:什么意思?\enter
+张大胖:就是要让容易改变的地方做的容易改变,容易复用.\enter
+小许:我这里只要一个类就可以了呀?\enter
+张大胖:我问你,如果有100个吃饭,睡觉方法互不相同的包子师傅,你要用几个类?\enter
+小许:100个.\enter
+张大胖:产品要改一下包子的制作方法.\enter
+小许:emmmm,100个类要改死我啊\enter
+张大胖:你看,BILL就把你的代码退回来了吧.\enter
+小许:哦!谢谢张大胖.\enter
+张大胖:不谢(BILL还送我个小黄鸭,不错)\enter
+\enter
+小许想了想,决定增加一个SKILL类(源代码我其实直接写成了FunctionPointer)\enter
+然后增加了SKILL类成员Eat,Sleep,Work.在eat,sleep,work里调用.(Pattern\_used.cpp)\enter
+BILL看了一眼:不错,不过你还是把SKILL改成类吧,毕竟这个SKILL里可能会发生一些神奇的事情.改完就能Commit了\enter
+很快,小许写出了最终版代码(Pattern\_Result.cpp)提交了.\enter
+BILL:小许啊,做的不错,你知道这是什么模式吗?\enter
+小许:什么模式?\enter
+BILL:这叫做--策略模式,那个SKILL类就是"策略"\enter
+小许:哦,涨芝士了.\enter
+这时,小许的邮箱又响了......未完待续.\enter
+\end{document}
