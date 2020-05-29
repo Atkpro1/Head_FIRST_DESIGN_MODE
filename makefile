@@ -1,6 +1,7 @@
-PDFS = 0.pdf 1.pdf 223.pdf
+PDFS = 0.pdf 1.pdf 223.pdf 4A5.pdf
 
 pdf:$(PDFS)
+	make clear
 
 clear:
 	rm -f pdf/*.log
