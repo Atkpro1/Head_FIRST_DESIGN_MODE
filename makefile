@@ -1,4 +1,4 @@
-PDFS = 0.pdf 1.pdf 223.pdf 4A5.pdf 6A7.pdf
+PDFS = 0.pdf 1.pdf 223.pdf 4A5.pdf 6A7.pdf 8A9.pdf
 
 pdf:$(PDFS)
 	make clear
